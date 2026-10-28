@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cartel QR · QM 5ª Marcha</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Source+Sans+3:wght@400;600&display=swap">
+<style>
+:root{--blue:#2f74bf;--ink:#122235;--muted:#566a80}
+*{box-sizing:border-box}
+body{margin:0;background:#e9eef4;font-family:"Source Sans 3",Arial,sans-serif;color:var(--ink);padding:20px 16px}
+.sheet{background:#fff;max-width:640px;margin:0 auto;border-radius:16px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.08);text-align:center}
+.sheet img.logo{width:100%;display:block}
+.body{padding:24px 28px 30px;display:grid;gap:14px;justify-items:center}
+h1{font-family:"Barlow Condensed",Arial Narrow,sans-serif;font-size:46px;line-height:1;margin:0}
+h1 b{color:var(--blue)}
+.tri{height:7px;width:150px;border-radius:4px;background:linear-gradient(90deg,#2e9b47 0 33.3%,#eee 33.3% 66.6%,#d7262e 66.6%)}
+.big{font-size:22px;font-weight:600;margin:0}
+#qr{padding:14px;border:3px solid var(--blue);border-radius:14px;background:#fff}
+#qr img,#qr canvas{display:block;width:260px;height:260px}
+.steps{display:grid;gap:6px;font-size:18px;text-align:left}
+.small{color:var(--muted);font-size:15px}
+.tip{max-width:640px;margin:14px auto 0;text-align:center;color:var(--muted);font-size:14px}
+@media print{body{background:#fff;padding:0}.sheet{box-shadow:none;border-radius:0;max-width:none}.tip{display:none}}
+</style></head><body>
+<div class="sheet">
+  <div class="qmban" role="img" aria-label="QM Lavado Automotriz" style="background:radial-gradient(circle at 20% 30%,rgba(255,255,255,.18) 0 6%,transparent 7%),radial-gradient(circle at 80% 60%,rgba(255,255,255,.14) 0 5%,transparent 6%),radial-gradient(circle at 60% 20%,rgba(255,255,255,.12) 0 3%,transparent 4%),linear-gradient(180deg,#3577c4,#4a9ad8);border-radius:0;color:#fff;text-align:center;padding:30px 16px;display:grid;justify-items:center;gap:6px;font-family:'Barlow Condensed','Arial Narrow',Arial,sans-serif"><span style="font-size:clamp(48px,12vw,96px);font-weight:700;font-style:italic;line-height:.9;letter-spacing:-.02em">QM</span><span style="display:block;width:clamp(90px,22vw,170px);height:8px;border-radius:3px;background:linear-gradient(90deg,#4caf50 0 33.3%,#f2f2f2 33.3% 66.6%,#e53935 66.6%)"></span><span style="font-size:clamp(18px,4.5vw,36px);font-weight:700;letter-spacing:.06em">LAVADO AUTOMOTRIZ</span></div>
+  <div class="body">
+    <h1>Programa <b>5ª Marcha</b></h1>
+    <div class="tri"></div>
+    <p class="big">Cada lavado sube una marcha. En 5ª eliges:<br>lavado gratis o 20% en afinación menor</p>
+    <div id="qr"></div>
+    <div class="steps">
+      <span>1. Escanea el código con la cámara de tu celular</span>
+      <span>2. Escribe la placa de tu auto</span>
+      <span>3. El cajero confirma tu visita al cobrar</span>
+    </div>
+    <p class="small">WhatsApp: 981 206 8402</p>
+  </div>
+</div>
+<p class="tip">Para imprimir: presiona Ctrl + P (o Compartir → Imprimir en el celular).</p>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script>
+  var url = location.href.replace(/cartel\.html.*$/, "") + "#cliente";
+  new QRCode(document.getElementById("qr"), {text: url, width: 520, height: 520, colorDark: "#122235", colorLight: "#ffffff", correctLevel: QRCode.CorrectLevel.M});
+</script>
+</body></html>
